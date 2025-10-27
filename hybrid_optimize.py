@@ -27,9 +27,9 @@ def calculate_smape(y_true, y_pred):
 # sarimax_pred = SARIMAX forecast for same period
 # lgbm_pred    = LightGBM forecast for same period
 
-y_true = np.array(y_test)
-y_sarimax_preds = np.array(sarimax_pred)
-y_lightgbm_preds = np.array(lgbm_pred)
+y_true = np.load("y_test.npy")
+y_sarimax_preds = np.load("sarimax_preds.npy")
+y_lightgbm_preds = np.load("lightgbm_preds.npy")
 
 # --- 2.1 Ensure equal lengths ---
 min_len = min(len(y_true), len(y_sarimax_preds), len(y_lightgbm_preds))
